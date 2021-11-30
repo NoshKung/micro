@@ -1,0 +1,32 @@
+int led[] = {2, 3, 4, 5, 6, 7,8,9};
+int BP = 12;
+int BS = 0;
+int BP2 = 11;
+int BS2 = 0;
+void setup() {
+  pinMode(BP, INPUT);
+  pinMode(BP2, INPUT);
+
+  for (int Pin = 0; Pin < 8; Pin++) {
+    pinMode(led[Pin], OUTPUT);
+  }
+}
+
+void loop() {
+  BS = digitalRead(BP);
+  BS2 = digitalRead(BP2);
+
+  if (BS == HIGH) {
+  for (int Pin = 0; Pin < 8; Pin++) {
+    digitalWrite(led[Pin], HIGH);
+    delay(50);
+    digitalWrite(led[Pin], LOW);
+  }
+  }
+  if (BS2 == HIGH) {
+  for (int Pin = 8 - 1; Pin >= 0; Pin--) {
+    digitalWrite(led[Pin], HIGH);
+    delay(50);
+    digitalWrite(led[Pin], LOW);
+  }}
+}
