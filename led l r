@@ -29,6 +29,14 @@ void loop() {
     digitalWrite(led[Pin], LOW);
     delay(50);
     digitalWrite(led[Pin], HIGH);
- 	 }
+    }
+  }
+      if (key == '3') { 
+
+  for (int Pin = 8 - 1; Pin >= 0; Pin--) {
+    digitalWrite(led[Pin], HIGH);
+    delay(50);
+    digitalWrite(led[Pin], LOW);
+    }
   }
 }
