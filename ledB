@@ -22,28 +22,24 @@ void loop() {
   BS3 = digitalRead(BP3);
 
   if (BS == LOW) {
-  for (int Pin = 0; Pin < 8; Pin++) {
-    digitalWrite(led[Pin], LOW);
-    delay(50);
-    digitalWrite(led[Pin], HIGH);
-  }
+    for (int Pin = 0; Pin < 8; Pin++) {
+      digitalWrite(led[Pin], LOW);
+      delay(50);
+      digitalWrite(led[Pin], HIGH);
+    }
   }
   if (BS2 == LOW) {
-  for (int Pin = 7; Pin >= 0; Pin--) {
-    digitalWrite(led[Pin], LOW);
-    delay(50);
-    digitalWrite(led[Pin], HIGH);
-  }}
-    if (BS3 == LOW) {
-  for (int Pin = 7; Pin >= 0; Pin--) {
-    digitalWrite(led[Pin], LOW);
-    delay(50);
-    digitalWrite(led[Pin], HIGH);
-  for (int Pin = 7; Pin >= 0; Pin--) {
-    digitalWrite(led[Pin], LOW);
-    delay(50);
-    digitalWrite(led[Pin], HIGH);
-  }
-  
+    for (int Pin = 7; Pin >= 0; Pin--) {
+      digitalWrite(led[Pin], LOW);
+      delay(50);
+      digitalWrite(led[Pin], HIGH);
+    }
+ }
+  if (BS3 == LOW) {
+    for (int Pin = 0; Pin < 8; Pin++) {
+      digitalWrite(led[Pin], HIGH);
+      delay(100);
+      digitalWrite(led[Pin], LOW);
+    }
  }
 }
