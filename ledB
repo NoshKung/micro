@@ -3,30 +3,47 @@ int BP = 12;
 int BS = 0;
 int BP2 = 11;
 int BS2 = 0;
+int BP3 = 13;
+int BS3 = 0;
 void setup() {
   pinMode(BP, INPUT);
   pinMode(BP2, INPUT);
+  pinMode(BP3, INPUT);
 
   for (int Pin = 0; Pin < 8; Pin++) {
     pinMode(led[Pin], OUTPUT);
+    digitalWrite(led[Pin], HIGH);
   }
 }
 
 void loop() {
   BS = digitalRead(BP);
   BS2 = digitalRead(BP2);
+  BS3 = digitalRead(BP3);
 
-  if (BS == HIGH) {
+  if (BS == LOW) {
   for (int Pin = 0; Pin < 8; Pin++) {
-    digitalWrite(led[Pin], HIGH);
-    delay(50);
     digitalWrite(led[Pin], LOW);
+    delay(50);
+    digitalWrite(led[Pin], HIGH);
   }
   }
-  if (BS2 == HIGH) {
-  for (int Pin = 8 - 1; Pin >= 0; Pin--) {
-    digitalWrite(led[Pin], HIGH);
-    delay(50);
+  if (BS2 == LOW) {
+  for (int Pin = 7; Pin >= 0; Pin--) {
     digitalWrite(led[Pin], LOW);
+    delay(50);
+    digitalWrite(led[Pin], HIGH);
   }}
+    if (BS3 == LOW) {
+  for (int Pin = 7; Pin >= 0; Pin--) {
+    digitalWrite(led[Pin], LOW);
+    delay(50);
+    digitalWrite(led[Pin], HIGH);
+  for (int Pin = 7; Pin >= 0; Pin--) {
+    digitalWrite(led[Pin], LOW);
+    delay(50);
+    digitalWrite(led[Pin], HIGH);
+  }
+  
+ }
 }
